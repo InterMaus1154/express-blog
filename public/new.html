@@ -2,10 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>JusTaBlog - Create New Post</title>
+    <script src="js/app.js" type="module"></script>
+    <script src="js/index.js" type="module"></script>
     <link rel="stylesheet" href="style/index.css">
-    <title>Title</title>
 </head>
 <body>
-
+<header>
+    <h1>
+        <a href="/">JusTaBlog</a>
+    </h1>
+    <nav>
+        <a href="/new" class="new-post-btn">+ New</a>
+        <a href="/">Home</a>
+        <a href="#" id="logout-button">Logout</a>
+    </nav>
+</header>
+<main>
+    <section class="new-post">
+        <div>
+            <h1>Create New Post</h1>
+            <form method="POST" id="new-post-form">
+                <div class="input-wrapper">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" placeholder="Title" required>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
 </body>
 </html>

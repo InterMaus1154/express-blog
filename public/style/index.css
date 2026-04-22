@@ -60,15 +60,15 @@ body {
 }
 
 main {
-    padding: 1rem 4rem;
+    padding: 2rem 4rem;
 }
 
-.posts-container{
+.posts-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 }
 
-.post-container{
+.post-container {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -76,18 +76,18 @@ main {
     box-shadow: 3px 3px 6px 0px rgba(204, 204, 204, 1);
     padding: 1rem;
 
-    header{
+    header {
         display: flex;
         flex-direction: column;
         gap: 1rem;
     }
 
-    header h2{
+    header h2 {
         text-align: center;
         color: var(--primary-dark);
     }
 
-    .category-badge{
+    .category-badge {
         border-radius: 1rem;
         padding: .55rem .65rem;
         border: 1px solid var(--category-badge-border);
@@ -97,24 +97,44 @@ main {
         color: var(--text-color, oklch(26.8% 0.011 36.5));
     }
 
-    .category-badge.orange{
+    .category-badge.orange {
         --category-badge-border: oklch(66.6% 0.179 58.318);
         --category-badge-background: oklch(76.9% 0.188 70.08 / 80%);
     }
 
-    .category-badge.green{
+    .category-badge.green {
         --category-badge-border: oklch(53.2% 0.157 131.589);
         --category-badge-background: oklch(76.8% 0.233 130.85);
     }
 
-    .category-badge.purple{
+    .category-badge.purple {
         --category-badge-border: oklch(39.8% 0.195 277.366);
         --category-badge-background: oklch(60.6% 0.25 292.717);
         --text-color: #fff;
     }
 
-    .category-list{
+    .category-list {
         display: flex;
         gap: .5rem;
+    }
+}
+
+.new-post {
+
+    display: flex;
+    justify-content: center;
+
+
+    & > div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        min-width: 25%;
+    }
+
+    h1{
+        color: var(--primary-dark);
+        text-align: center;
     }
 }
