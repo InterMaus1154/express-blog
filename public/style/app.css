@@ -47,15 +47,33 @@ input[type="submit"] {
 
     transition: all 300ms;
 
-    &:hover{
+    &:hover {
         background-color: var(--primary);
         color: #fff;
     }
 }
 
-.input-wrapper:has(input[required]){
-    label::after{
+.input-wrapper:has(input[required]) {
+    label::after {
         content: '*';
         color: red;
     }
+}
+
+.status-message {
+    font-size: 1.125rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.status-message.error {
+    color: red;
+}
+
+.status-message.success {
+    color: var(--primary);
+}
+
+.status-message.hidden{
+    display: none;
 }

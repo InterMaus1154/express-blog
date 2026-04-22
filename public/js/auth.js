@@ -17,7 +17,13 @@ const registerListeners = () => {
             });
 
             if (res.status === 200) {
-                console.log(res.data);
+                localStorage.setItem("token", res.data.token);
+                localStorage.setItem("user", JSON.stringify(res.data.user));
+                window.location = "/";
+            }else{
+                const el = document.querySelector("#error");
+                el.classList.remove("hidden");
+                el.innerText = res.data.message;
             }
 
         });
@@ -43,7 +49,11 @@ const registerListeners = () => {
             if (res.status === 201) {
                 localStorage.setItem("token", res.data.token);
                 localStorage.setItem("user", JSON.stringify(res.data.user));
-                console.log(res.data);
+                window.location = "/";
+            } else if (res.status === 422) {
+                const el = document.querySelector("#error");
+                el.classList.remove("hidden");
+                el.innerText = res.data.message;
             }
         });
     }

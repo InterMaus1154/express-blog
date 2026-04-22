@@ -14,7 +14,7 @@ export const apiFetch = async (path, options = {}) => {
         }
     });
 
-    if (res.status === 401) {
+    if (path !== "/login" && res.status === 401) {
         localStorage.removeItem("token");
         window.location = '/login';
         return;
