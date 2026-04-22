@@ -52,3 +52,10 @@ input[type="submit"] {
         color: #fff;
     }
 }
+
+.input-wrapper:has(input[required]){
+    label::after{
+        content: '*';
+        color: red;
+    }
+}

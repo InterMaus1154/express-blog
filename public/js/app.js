@@ -14,11 +14,12 @@ export const apiFetch = async (path, options = {}) => {
         }
     });
 
-    if(res.status === 401){
+    if (res.status === 401) {
         localStorage.removeItem("token");
         window.location = '/login';
         return;
     }
 
-    return res.json();
+    const data = await res.json();
+    return {ok: res.ok, status: res.status, data}
 };
