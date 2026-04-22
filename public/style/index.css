@@ -1,39 +1,39 @@
 @import url("./app.css");
 
-header{
+body > header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 4rem;
-    box-shadow: 3px 3px 6px 0px rgba(204,204,204,1);
+    box-shadow: 3px 3px 6px 0px rgba(204, 204, 204, 1);
 
-    h1{
+    h1 {
         color: var(--primary-dark);
     }
 
-    h1 a{
+    h1 a {
         text-decoration: none;
     }
 
-    nav{
+    nav {
         display: flex;
         align-items: center;
         gap: 1rem;
     }
 
-    nav a{
+    nav a {
         font-size: 1.125rem;
         text-decoration: none;
         color: var(--primary-dark);
 
         transition: color 300ms;
 
-        &:hover{
+        &:hover {
             color: var(--primary);
         }
     }
 
-    nav a.new-post-btn{
+    nav a.new-post-btn {
 
         transition: background-color 300ms;
 
@@ -47,7 +47,7 @@ header{
 
         border: 1px solid transparent;
 
-        &:hover{
+        &:hover {
             color: var(--primary-dark);
             background-color: #fff;
             border-color: var(--light-border);
@@ -55,10 +55,66 @@ header{
     }
 }
 
-body{
+body {
     background-color: var(--light-gray);
 }
 
-main{
+main {
     padding: 1rem 4rem;
+}
+
+.posts-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+.post-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    box-shadow: 3px 3px 6px 0px rgba(204, 204, 204, 1);
+    padding: 1rem;
+
+    header{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    header h2{
+        text-align: center;
+        color: var(--primary-dark);
+    }
+
+    .category-badge{
+        border-radius: 1rem;
+        padding: .55rem .65rem;
+        border: 1px solid var(--category-badge-border);
+        background-color: var(--category-badge-background);
+        font-size: .75rem;
+        font-weight: bold;
+        color: var(--text-color, oklch(26.8% 0.011 36.5));
+    }
+
+    .category-badge.orange{
+        --category-badge-border: oklch(66.6% 0.179 58.318);
+        --category-badge-background: oklch(76.9% 0.188 70.08 / 80%);
+    }
+
+    .category-badge.green{
+        --category-badge-border: oklch(53.2% 0.157 131.589);
+        --category-badge-background: oklch(76.8% 0.233 130.85);
+    }
+
+    .category-badge.purple{
+        --category-badge-border: oklch(39.8% 0.195 277.366);
+        --category-badge-background: oklch(60.6% 0.25 292.717);
+        --text-color: #fff;
+    }
+
+    .category-list{
+        display: flex;
+        gap: .5rem;
+    }
 }
