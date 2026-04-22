@@ -1,1 +1,64 @@
 @import url("./app.css");
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    box-shadow: 3px 3px 6px 0px rgba(204,204,204,1);
+
+    h1{
+        color: var(--primary-dark);
+    }
+
+    h1 a{
+        text-decoration: none;
+    }
+
+    nav{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    nav a{
+        font-size: 1.125rem;
+        text-decoration: none;
+        color: var(--primary-dark);
+
+        transition: color 300ms;
+
+        &:hover{
+            color: var(--primary);
+        }
+    }
+
+    nav a.new-post-btn{
+
+        transition: background-color 300ms;
+
+        background-color: var(--primary-dark);
+        font-weight: bold;
+        font-size: 1.125rem;
+        color: #fff;
+        padding: .5rem;
+        border-radius: .5rem;
+        text-decoration: none;
+
+        border: 1px solid transparent;
+
+        &:hover{
+            color: var(--primary-dark);
+            background-color: #fff;
+            border-color: var(--light-border);
+        }
+    }
+}
+
+body{
+    background-color: var(--light-gray);
+}
+
+main{
+    padding: 1rem 4rem;
+}

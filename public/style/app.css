@@ -10,6 +10,7 @@
     --dark-gray: oklch(21% 0.034 264.665);
     --light-border: oklch(90.5% 0.093 164.15);
     --primary: oklch(76.5% 0.177 163.223);
+    --primary-dark: oklch(59.6% 0.145 163.225);
 }
 
 html {
@@ -20,8 +21,13 @@ img {
     display: block;
 }
 
-a, a:visited {
+a{
     color: inherit;
+}
+
+
+ul, ol{
+    list-style-type: none;
 }
 
 .input-wrapper {
@@ -77,3 +83,4 @@ input[type="submit"] {
 .status-message.hidden{
     display: none;
 }
+
