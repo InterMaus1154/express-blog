@@ -20,7 +20,7 @@ const registerListeners = () => {
                 localStorage.setItem("token", res.data.token);
                 localStorage.setItem("user", JSON.stringify(res.data.user));
                 window.location = "/";
-            }else{
+            } else {
                 const el = document.querySelector("#error");
                 el.classList.remove("hidden");
                 el.innerText = res.data.message;
