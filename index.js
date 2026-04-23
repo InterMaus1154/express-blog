@@ -10,15 +10,28 @@ const app = express();
 
 const __dirname = import.meta.dirname;
 
+app.get("/health", (req, res) => {
+    res.json({
+        message: "API running"
+    });
+});
+
+app.use(logger);
 app.use(express.json());
 app.use(express.static("public", {extensions: ['html']}));
 
-app.use(logger);
 
 app.use(authRouter);
 app.use("/posts", auth, postRouter);
 app.use("/categories", auth, categoryRouter);
 
+
+// handle not found route
+app.use((req, res) => {
+    res.status(404).json({
+        message: "Route not found"
+    });
+});
 
 app.listen(3000, () => {
     console.log("Server running on 3000");
