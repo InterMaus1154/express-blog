@@ -36,30 +36,31 @@ ul, ol{
     gap: 0.5rem;
 }
 
-input, label {
+input, label, textarea {
     font-family: inherit;
 }
 
-input {
+input, textarea {
     padding: 0.5rem;
     border-radius: 0.25rem;
     border: 1px solid var(--light-border);
 }
 
 input[type="submit"] {
-    background-color: #fff;
+    background-color: var(--primary);
     font-size: 1.25rem;
     cursor: pointer;
 
     transition: all 300ms;
 
+    color: #fff;
+
     &:hover {
-        background-color: var(--primary);
-        color: #fff;
+        background-color: var(--primary-dark);
     }
 }
 
-.input-wrapper:has(input[required]) {
+.input-wrapper:has([required]) {
     label::after {
         content: '*';
         color: red;

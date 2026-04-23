@@ -137,4 +137,15 @@ main {
         color: var(--primary-dark);
         text-align: center;
     }
+
+    .checkboxes{
+        display: flex;
+        gap: .5rem;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
